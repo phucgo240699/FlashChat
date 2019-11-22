@@ -14,7 +14,11 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var emailTextfield: UITextField!
     @IBOutlet weak var passwordTextfield: UITextField!
     
-
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(true)
+        emailTextfield.text="phuc@gmail.com"
+        passwordTextfield.text="helloworld"
+    }
     @IBAction func loginPressed(_ sender: UIButton) {
         if let email=emailTextfield.text, let password=passwordTextfield.text{
             
