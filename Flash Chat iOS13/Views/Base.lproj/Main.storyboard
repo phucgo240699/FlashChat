@@ -30,8 +30,8 @@
                                     <segue destination="5v2-hE-4Ub" kind="show" id="gie-vS-xcf"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="y7D-jv-BlJ">
-                                <rect key="frame" x="20" y="319.5" width="335" height="28"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="⚡️FlashChat" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="y7D-jv-BlJ">
+                                <rect key="frame" x="15" y="319.5" width="320" height="28"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="28" id="ph1-wX-D3a"/>
                                 </constraints>
@@ -57,16 +57,15 @@
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
+                            <constraint firstItem="y7D-jv-BlJ" firstAttribute="centerY" secondItem="H86-OM-sMN" secondAttribute="centerY" id="20M-ar-7he"/>
                             <constraint firstItem="dWe-nW-2HB" firstAttribute="trailing" secondItem="w0w-hE-MVy" secondAttribute="trailing" id="7Vx-Xq-VaO"/>
                             <constraint firstItem="dWe-nW-2HB" firstAttribute="leading" secondItem="w0w-hE-MVy" secondAttribute="leading" id="Ag7-Hh-D9X"/>
-                            <constraint firstItem="y7D-jv-BlJ" firstAttribute="centerY" secondItem="H86-OM-sMN" secondAttribute="centerY" id="Ipj-e5-54T"/>
                             <constraint firstItem="dWe-nW-2HB" firstAttribute="bottom" secondItem="w0w-hE-MVy" secondAttribute="bottom" id="ZsM-5p-lNb"/>
                             <constraint firstItem="dWe-nW-2HB" firstAttribute="top" secondItem="h2x-tz-C9Y" secondAttribute="bottom" constant="8" id="cnI-Zh-aEc"/>
-                            <constraint firstItem="w0w-hE-MVy" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="y7D-jv-BlJ" secondAttribute="trailing" id="eaW-iX-nU1"/>
-                            <constraint firstItem="y7D-jv-BlJ" firstAttribute="leading" secondItem="w0w-hE-MVy" secondAttribute="leading" constant="20" id="jQ7-o7-bnG"/>
+                            <constraint firstItem="w0w-hE-MVy" firstAttribute="trailing" secondItem="y7D-jv-BlJ" secondAttribute="trailing" constant="40" id="eaW-iX-nU1"/>
+                            <constraint firstItem="y7D-jv-BlJ" firstAttribute="leading" secondItem="w0w-hE-MVy" secondAttribute="leading" constant="15" id="jQ7-o7-bnG"/>
                             <constraint firstItem="h2x-tz-C9Y" firstAttribute="trailing" secondItem="w0w-hE-MVy" secondAttribute="trailing" id="sNZ-Ul-l2q"/>
                             <constraint firstItem="h2x-tz-C9Y" firstAttribute="leading" secondItem="w0w-hE-MVy" secondAttribute="leading" id="tLN-qz-xiG"/>
-                            <constraint firstItem="y7D-jv-BlJ" firstAttribute="centerX" secondItem="H86-OM-sMN" secondAttribute="centerX" id="vNd-pq-rnh"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="w0w-hE-MVy"/>
                     </view>
