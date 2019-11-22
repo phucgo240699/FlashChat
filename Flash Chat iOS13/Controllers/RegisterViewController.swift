@@ -15,18 +15,15 @@ class RegisterViewController: UIViewController {
     @IBOutlet weak var passwordTextfield: UITextField!
     
     @IBAction func registerPressed(_ sender: UIButton) {
-        if let email=emailTextfield.text, let password=passwordTextfield.text{
-            
-            Auth.auth().createUser(withEmail: email, password: password) { authResult, error in
-                if let error=error{
-                    print(error)
-                }
-                else{
-                    self.performSegue(withIdentifier: "RegisterToChat", sender: self)
-                }
-            }
-        }
+        guard let email=emailTextfield.text, let password=passwordTextfield.text else {return}
         
+        Auth.auth().createUser(withEmail: email, password: password) { authResult, error in
+            guard error==nil else{ // guard: Là 1 bác bảo vệ. Thoả điều kiện thì cho đi qua, else thì bị giữ lại
+                print(error!)
+                return
+            }
+            self.performSegue(withIdentifier: "RegisterToChat", sender: self)
+            self.passwordTextfield.text=""
+        }
     }
-    
 }

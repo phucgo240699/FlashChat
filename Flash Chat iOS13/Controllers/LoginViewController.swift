@@ -19,13 +19,12 @@ class LoginViewController: UIViewController {
         if let email=emailTextfield.text, let password=passwordTextfield.text{
             
             Auth.auth().signIn(withEmail: email, password: password) { [weak self] authResult, error in
-              guard let strongSelf = self else { return }
-                if let error=error{
-                    print(error)
-                }
-                else{
-                    strongSelf.performSegue(withIdentifier: "LoginToChat", sender: self)
-                }
+              guard error==nil else{ // guard: Là 1 bác bảo vệ. Thoả điều kiện thì cho đi qua, else thì bị giữ lại
+                  print(error!)
+                  return
+              }
+                self!.performSegue(withIdentifier: "LoginToChat", sender: self)
+                self!.passwordTextfield.text=""
             }
         }
         
