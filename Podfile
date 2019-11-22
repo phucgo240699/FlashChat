@@ -7,7 +7,6 @@ target 'Flash Chat iOS13' do
 
   # Pods for Flash Chat iOS13
 # add the Firebase pod for Google Analytics
-pod 'Firebase/Analytics'
 pod 'CLTypingLabel'
 pod 'Firebase/Auth'
 pod 'Firebase/Firestore'
