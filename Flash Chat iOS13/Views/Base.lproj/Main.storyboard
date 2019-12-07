@@ -11,7 +11,7 @@
         <!--Welcome View Controller-->
         <scene sceneID="gOV-Nw-jnq">
             <objects>
-                <viewController id="Tim-3B-f4n" customClass="WelcomeViewController" customModule="Flash_Chat_iOS13" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="Tim-3B-f4n" customClass="WelcomeViewController" customModule="Flash_Chat" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="H86-OM-sMN">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -81,7 +81,7 @@
         <!--Register View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="RegisterViewController" customModule="Flash_Chat_iOS13" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="RegisterViewController" customModule="Flash_Chat" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="h2S-Ae-zdW">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -176,7 +176,7 @@
         <!--Login View Controller-->
         <scene sceneID="Hzg-jR-yiY">
             <objects>
-                <viewController id="5v2-hE-4Ub" customClass="LoginViewController" customModule="Flash_Chat_iOS13" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="5v2-hE-4Ub" customClass="LoginViewController" customModule="Flash_Chat" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="NR3-PA-yDz">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -271,7 +271,7 @@
         <!--Chat View Controller-->
         <scene sceneID="yeH-Ia-3JZ">
             <objects>
-                <viewController id="lwd-AH-u8E" customClass="ChatViewController" customModule="Flash_Chat_iOS13" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="lwd-AH-u8E" customClass="ChatViewController" customModule="Flash_Chat" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="CEy-W8-acN">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -334,7 +334,7 @@
                         <viewLayoutGuide key="safeArea" id="6YX-ca-E8f"/>
                     </view>
                     <navigationItem key="navigationItem" id="Q5u-eL-Bgp">
-                        <barButtonItem key="rightBarButtonItem" title="Log out" id="PFg-Ss-cCc">
+                        <barButtonItem key="rightBarButtonItem" title="Log Out" id="PFg-Ss-cCc">
                             <connections>
                                 <action selector="logOutPressed:" destination="lwd-AH-u8E" id="i0j-T1-Swp"/>
                             </connections>

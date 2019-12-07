@@ -26,24 +26,23 @@ class ChatViewController: UIViewController {
             .order(by: "date")
             .addSnapshotListener { (querySnapShot, error) in
             guard error == nil else{
-                print("Failed load message")
                 return
             }
             guard let Docs = querySnapShot?.documents else{
                 
-                print("Failed load message second error")
                 return
             }
             self.messages=[]
             for doc in Docs{
                 guard let messageSender=doc.data()["sender"] as? String, let messageBody=doc.data()["body"] as? String else{
-                    print("Failed third")
                     return
                 }
                 self.messages.append(Message(sender: messageSender, body: messageBody))
             }
-            self.tableView.reloadData()
-            print("Success load message")
+                
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
+            }
             
         }
     }
@@ -57,25 +56,25 @@ class ChatViewController: UIViewController {
     
     
     
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(true)
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
         navigationItem.hidesBackButton=true
+        
     }
     
     
     @IBAction func sendPressed(_ sender: UIButton) {
         guard let messageBody = messageTextfield.text, let messageSender = Auth.auth().currentUser?.email else {
-            print("Failed prepare before send message")
+            
             return
         }
-        
+
+        self.messageTextfield.text=""
         db.collection("messages")
             .addDocument(data: ["sender": messageSender, "body": messageBody, "date": Date().timeIntervalSince1970]) { (error) in                                                      guard error == nil else{
-            print("Failed send message to firecloud store")
+                
                 return
             }
-            print("Success")
-            
                                                         
         }
         
@@ -100,8 +99,26 @@ extension ChatViewController:UITableViewDataSource{
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        let message=messages[indexPath.row]
+        
         let cell=tableView.dequeueReusableCell(withIdentifier: "ReusableCell", for: indexPath) as! MessageCellTableViewCell
-        cell.textLabel?.text=messages[indexPath.row].body
+        cell.label?.text=message.body
+        
+        if message.sender == Auth.auth().currentUser?.email {
+            cell.friendImageAvatar.isHidden=true
+            cell.imageAvatar.isHidden=false
+            cell.messageBuble.backgroundColor=UIColor(named: "Lime")
+            cell.label.textColor=UIColor.black
+        }
+        else {
+            cell.friendImageAvatar.isHidden=false
+            cell.imageAvatar.isHidden=true
+            cell.messageBuble.backgroundColor=UIColor(named: "BranchLightPurple")
+            cell.label.textColor=UIColor.black
+            
+        }
+        
         return cell
     }
     
